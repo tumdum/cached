@@ -27,6 +27,9 @@ features = ["raw"]
 [dependencies.once_cell]
 version = "1"
 
+[dependencies.parking_lot]
+version = "0.11"
+
 [dependencies.async-mutex]
 version = "1.4"
 optional = true
@@ -52,6 +55,7 @@ optional = true
 [dependencies.async-trait]
 version = "0.1"
 optional = true
+
 
 [dev-dependencies.tokio]
 version = "1.12"

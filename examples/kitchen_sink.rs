@@ -106,7 +106,7 @@ pub fn main() {
     fib(3);
     fib(3);
     {
-        let cache = FIB.lock().unwrap();
+        let cache = FIB.lock();
         println!("hits: {:?}", cache.cache_hits());
         println!("misses: {:?}", cache.cache_misses());
         // make sure lock is dropped
@@ -118,7 +118,7 @@ pub fn main() {
     fib_specific(20);
     fib_specific(20);
     {
-        let cache = FIB_SPECIFIC.lock().unwrap();
+        let cache = FIB_SPECIFIC.lock();
         println!("hits: {:?}", cache.cache_hits());
         println!("misses: {:?}", cache.cache_misses());
         // make sure lock is dropped
@@ -129,7 +129,7 @@ pub fn main() {
     println!("\n ** custom cache **");
     custom(25);
     {
-        let cache = CUSTOM.lock().unwrap();
+        let cache = CUSTOM.lock();
         println!("hits: {:?}", cache.cache_hits());
         println!("misses: {:?}", cache.cache_misses());
         // make sure lock is dropped
@@ -141,7 +141,7 @@ pub fn main() {
     println!(" - second run `slow(10)`");
     slow(10, 10);
     {
-        let cache = SLOW.lock().unwrap();
+        let cache = SLOW.lock();
         println!("hits: {:?}", cache.cache_hits());
         println!("misses: {:?}", cache.cache_misses());
         // make sure the cache-lock is dropped
